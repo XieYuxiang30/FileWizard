@@ -1,0 +1,9 @@
+{
+  "图片": [".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg", ".bmp"],
+  "文档": [".pdf", ".docx", ".doc", ".txt", ".md", ".xlsx", ".pptx", ".csv"],
+  "视频": [".mp4", ".mkv", ".avi", ".mov", ".flv"],
+  "音频": [".mp3", ".wav", ".flac"],
+  "压缩包": [".zip", ".rar", ".7z", ".tar", ".gz"],
+  "程序脚本": [".py", ".js", ".html", ".css", ".java", ".cpp", ".exe", ".msi"],
+  "其他": []
+}
