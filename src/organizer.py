@@ -4,7 +4,23 @@ from pathlib import Path
 
 
 def load_config(config_path):
-    # 读取配置文件
+    # 读取配置文件，如果不存在则创建默认配置
+    config_path = Path(config_path)
+    if not config_path.exists():
+        default_config = {
+            "图片": [".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg", ".bmp"],
+            "文档": [".pdf", ".docx", ".doc", ".txt", ".md", ".xlsx", ".pptx", ".csv"],
+            "视频": [".mp4", ".mkv", ".avi", ".mov", ".flv"],
+            "音频": [".mp3", ".wav", ".flac"],
+            "压缩包": [".zip", ".rar", ".7z", ".tar", ".gz"],
+            "程序脚本": [".py", ".js", ".html", ".css", ".java", ".cpp", ".exe", ".msi"],
+            "其他": []
+        }
+        config_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(config_path, 'w', encoding='utf-8') as f:
+            json.dump(default_config, f, ensure_ascii=False, indent=2)
+        return default_config
+    
     with open(config_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 

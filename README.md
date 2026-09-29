@@ -11,10 +11,33 @@
 
 ## 🚀 快速开始
 
+### 方式一：使用 Python 运行
+
 1. 克隆代码到本地
 2. 安装依赖：`pip install -r requirements.txt`
 3. 预览整理（安全）：`python main.py "你的文件夹路径" --dry-run`
 4. 确认无误后执行：`python main.py "你的文件夹路径"`
+
+### 方式二：使用 exe 文件（无需 Python 环境）
+
+1. 前往 [Releases](https://github.com/XieYuxiang30/FileWizard/releases) 下载最新版本的 `FileWizard.exe`
+2. 将 `FileWizard.exe` 和 `config.json` 放在同一个文件夹下
+3. 打开 PowerShell，进入该文件夹，运行：
+   ```bash
+   # 预览模式（安全，不实际移动）
+   .\FileWizard.exe "你的文件夹路径" --dry-run
+   
+   # 正式整理
+   .\FileWizard.exe "你的文件夹路径"
+   ```
+
+> **提示：** 如果没有 `config.json`，程序会自动生成默认分类规则。你也可以复制项目根目录的 `config.json` 来自定义分类。
+
+### 方式三：自己打包 exe
+
+1. 克隆仓库并安装依赖：`pip install -r requirements.txt pyinstaller`
+2. 运行打包命令：`pyinstaller -F --name FileWizard main.py`
+3. 打包完成后，exe 文件位于 `dist/FileWizard.exe`
 
 ## 📋 支持的后缀（默认配置）
 

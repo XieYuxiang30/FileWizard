@@ -1,3 +1,9 @@
+import sys
+
+# 修复 Windows 控制台默认 GBK 编码导致的 emoji 乱码
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 import argparse
 from pathlib import Path
 from src.organizer import organize_directory
